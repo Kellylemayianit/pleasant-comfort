@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pleasant Comfort Guest House — Kimana</title>
+<meta name="description" content="A quiet, family-run guest house in Kimana, on the road to Amboseli National Park. Rooms from KES 2,500 per night.">
+
+<link rel="stylesheet" href="styles/tokens.css">
+<link rel="stylesheet" href="styles/utilities/buttons.css">
+<link rel="stylesheet" href="styles/components/header.css">
+<link rel="stylesheet" href="styles/components/hero.css">
+<link rel="stylesheet" href="styles/components/card.css">
+<link rel="stylesheet" href="styles/components/booking.css">
+<link rel="stylesheet" href="styles/components/footer.css">
+</head>
+<body>
+
+<div id="headerSlot"></div>
+
+<main id="app"></main>
+
+<div id="footerSlot"></div>
+
+<!-- ── Cart drawer (persistent shell chrome, re-rendered on demand) ── -->
+<div class="cart-overlay" id="cartOverlay"></div>
+<aside class="cart-panel" id="cartPanel" aria-label="Booking cart">
+  <div class="cart-panel__header">
+    <h2 class="cart-panel__title">Your enquiry</h2>
+    <button class="modal__close" id="cartClose" aria-label="Close cart">✕</button>
+  </div>
+  <div class="cart-panel__body" id="cartPanelBody"></div>
+  <div class="cart-panel__footer" id="cartPanelFooter"></div>
+</aside>
+
+<!-- ── Sticky mobile cart bar ── -->
+<div class="mobile-cart-bar" id="mobileCartBar">
+  <span id="mobileCartSummary">0 rooms selected</span>
+  <span class="btn btn-primary btn-sm">View cart</span>
+</div>
+
+<!-- ── Floating WhatsApp shortcut ── -->
+<a class="fab-whatsapp" id="fabWhatsapp" href="https://wa.me/254725153212?text=Hello%20Pleasant%20Comfort%20Guest%20House%2C%20I%27d%20like%20to%20ask%20about%20a%20room."
+   target="_blank" rel="noopener" aria-label="Message us on WhatsApp">💬</a>
+
+<!-- ── Toast ── -->
+<div class="toast" id="toast"></div>
+
+<script type="module" src="src/app.js"></script>
+</body>
+</html>

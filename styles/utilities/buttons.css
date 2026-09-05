@@ -1,0 +1,70 @@
+/* ============================================================
+   utilities/buttons.css
+   ============================================================ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 0.92rem;
+  border: 1px solid transparent;
+  transition: transform 0.15s ease, background 0.15s ease, border-color 0.15s ease;
+  white-space: nowrap;
+}
+.btn:active { transform: translateY(1px); }
+
+.btn-primary {
+  background: var(--rose);
+  color: var(--white);
+}
+.btn-primary:hover { background: var(--rose-deep); }
+
+.btn-outline {
+  background: transparent;
+  border-color: var(--rose);
+  color: var(--rose-deep);
+}
+.btn-outline:hover { background: var(--rose-tint); }
+
+.btn-ghost {
+  background: transparent;
+  color: var(--ink-soft);
+  padding: 0.6rem 0.9rem;
+}
+.btn-ghost:hover { color: var(--rose-deep); }
+
+.btn-whatsapp {
+  background: #25D366;
+  color: #063212;
+}
+.btn-whatsapp:hover { background: #1FBB59; }
+
+.btn-block { width: 100%; }
+
+.btn-sm { padding: 0.55rem 1rem; font-size: 0.8rem; }
+
+.btn[disabled] {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Icon-only circular button (qty stepper, close) */
+.btn-round {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--sand);
+  background: var(--white);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1rem;
+  line-height: 1;
+  color: var(--rose-deep);
+}
+.btn-round:hover { background: var(--rose-tint); border-color: var(--rose); }

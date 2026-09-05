@@ -1,0 +1,53 @@
+/* ============================================================
+   components/footer.css
+   ============================================================ */
+
+.site-footer {
+  background: var(--ink);
+  color: var(--paper);
+  padding-block: 3rem 2rem;
+}
+.site-footer a { color: var(--paper); }
+
+.footer-grid {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+  margin-bottom: 2rem;
+}
+@media (min-width: 700px) {
+  .footer-grid { grid-template-columns: 1.2fr 1fr 1fr; }
+}
+
+.footer-brand__name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+.footer-brand__desc { color: rgba(247,241,232,0.7); font-size: 0.88rem; max-width: 32ch; }
+
+.footer-col__title {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--sand);
+  margin-bottom: 0.9rem;
+}
+.footer-col__list { display: flex; flex-direction: column; gap: 0.6rem; }
+.footer-col__list a {
+  font-size: 0.88rem;
+  color: rgba(247,241,232,0.85);
+}
+.footer-col__list a:hover { color: var(--white); text-decoration: underline; }
+
+.footer-bottom {
+  border-top: 1px solid rgba(247,241,232,0.15);
+  padding-top: 1.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.78rem;
+  color: rgba(247,241,232,0.55);
+}

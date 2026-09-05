@@ -1,0 +1,164 @@
+/* ============================================================
+   components/card.css — room cards, event cards, shared modal
+   ============================================================ */
+
+.section-head { max-width: 60ch; margin-bottom: 2.25rem; }
+.section-head--center { margin-inline: auto; text-align: center; }
+
+/* ── Room card (compact — used in home preview) ── */
+.room-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  display: flex;
+  flex-direction: column;
+}
+.room-card__image {
+  height: 170px;
+  background: linear-gradient(155deg, var(--paper-deep), var(--rose-tint));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--rose-deep);
+}
+.room-card__image .glyph { font-size: 2.1rem; }
+.room-card__body { padding: 1.4rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.room-card__type { font-size: 0.78rem; color: var(--sage); font-weight: 600; }
+.room-card__name { font-size: 1.3rem; margin: 0; }
+.room-card__desc { font-size: 0.88rem; margin: 0; }
+.room-card__footer {
+  margin-top: auto;
+  padding-top: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+.room-card__price-amount { font-weight: 700; color: var(--rose-deep); display: block; }
+.room-card__price-note { font-size: 0.72rem; color: var(--ink-soft); }
+
+.amenity-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-block: 0.25rem; }
+.amenity-tag {
+  font-size: 0.72rem;
+  background: var(--paper-deep);
+  color: var(--ink-soft);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+}
+
+/* ── Full room card (rooms page) ── */
+.room-card-full {
+  display: grid;
+  gap: 0;
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  margin-bottom: 1.75rem;
+}
+@media (min-width: 760px) {
+  .room-card-full { grid-template-columns: 0.9fr 1.1fr; }
+}
+.room-card-full__image {
+  min-height: 220px;
+  background: linear-gradient(155deg, var(--rose-tint), var(--paper-deep));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--rose-deep);
+  flex-direction: column;
+  gap: 0.4rem;
+  text-align: center;
+  padding: 1rem;
+}
+.room-card-full__image .glyph { font-size: 2.6rem; }
+.room-card-full__image span.caption { font-size: 0.78rem; color: var(--ink-soft); }
+
+.room-card-full__body { padding: 1.75rem; }
+.room-feature-list {
+  display: flex; flex-wrap: wrap; gap: 0.5rem;
+  margin-block: 1rem;
+}
+.room-feature-item {
+  font-size: 0.78rem;
+  border: 1px solid var(--sand);
+  color: var(--ink-soft);
+  padding: 0.3rem 0.65rem;
+  border-radius: 999px;
+}
+
+.price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+.price-row__amount { font-family: var(--font-display); font-size: 1.6rem; color: var(--rose-deep); font-weight: 700; }
+.price-row__per { font-size: 0.8rem; color: var(--ink-soft); }
+
+.qty-row {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+.qty-row__label { font-size: 0.82rem; color: var(--ink-soft); font-weight: 600; }
+.qty-row__value { font-weight: 700; min-width: 1.2rem; text-align: center; }
+
+/* ── Event / enquiry card ── */
+.event-card {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+}
+.event-card__image {
+  height: 160px;
+  background: linear-gradient(155deg, var(--paper-deep), var(--rose-tint));
+  display: flex; align-items: center; justify-content: center;
+  color: var(--rose-deep); font-size: 2rem;
+}
+.event-card__body { padding: 1.4rem; }
+.event-card__features { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-block: 0.85rem; }
+.event-feature {
+  font-size: 0.72rem;
+  background: var(--paper-deep);
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  color: var(--ink-soft);
+}
+
+.callout {
+  background: var(--rose-tint);
+  border: 1px solid rgba(169,69,90,0.25);
+  border-radius: var(--radius-md);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  gap: 0.9rem;
+  align-items: flex-start;
+  margin-top: 2rem;
+}
+.callout__icon { font-size: 1.3rem; flex-shrink: 0; }
+.callout p { margin: 0; font-size: 0.85rem; }
+.callout strong { color: var(--rose-deep); }
+
+/* ── Shared modal ── */
+.modal-overlay {
+  position: fixed; inset: 0;
+  background: rgba(42,33,29,0.55);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1.25rem;
+  z-index: 80;
+}
+.modal-overlay.is-open { display: flex; }
+.modal {
+  background: var(--white);
+  border-radius: var(--radius-lg);
+  max-width: 480px;
+  width: 100%;
+  padding: 1.75rem;
+  box-shadow: var(--shadow-panel);
+  max-height: 85vh;
+  overflow-y: auto;
+}
+.modal__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 0.75rem; }
+.modal__close { background: none; border: none; font-size: 1.2rem; color: var(--ink-soft); line-height: 1; }
